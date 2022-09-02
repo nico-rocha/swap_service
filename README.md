@@ -1,20 +1,67 @@
 # SwapService
 
-To start your Phoenix server:
+
+## Challenge:
+ - Create a Phoenix API as a service retrieve all issues from a certain GitHub repository and returns a json data.
+ 
+## Route:
+ - Post -> /api/repository/
+
+
+## Json returned:
+
+
+  ###  - Body Json input:
+  ```
+  { 
+    user: nome_usuario
+
+    repository: nome_repositorio
+  }
+
+  ```
+  ###  - Body Json expected:
+  ```
+  { 
+
+    user: nome_usuario
+
+    repository: nome_repositorio
+
+     issues: 
+
+     [
+
+        {title, author and labels},
+
+        {title, author and labels},
+        ...
+
+     ],
+
+     contributors: 
+
+     [
+
+        {name, user, qtd_commits},
+
+        {name, user, qtd_commits},
+        ....
+
+     ]
+
+   }
+  ```
+ 
+## Test:
+
+ Folder test: test/swap_service_web/controllers/controllers_test.exs
+- Run tests with mix test
+ 
+
+## To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
   * Start Phoenix endpoint with `mix phx.server`
-
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+ 
